@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/tradingwp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trading Calculator"
+        android:textColor="@android:color/system_accent1_900"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/anzahl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="how many Times to Trade"
+        android:layout_marginTop="100dp"
+        android:letterSpacing="0.1"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        ></EditText>
+    <EditText
+        android:id="@+id/money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:letterSpacing="0.1"
+        android:textColor="@color/white"
+
+        android:hint="How much money to start Trading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/anzahl"
+        ></EditText>
+    <EditText
+        android:id="@+id/percentage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Percentage aimed for each Trade"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        android:letterSpacing="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/money"
+        ></EditText>
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:onClick="sumbission"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/system_accent1_900"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Submit"
+        ></Button>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
