@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class Results extends AppCompatActivity {
@@ -11,8 +12,7 @@ public class Results extends AppCompatActivity {
     private TextView percentageTextView;
     private TextView moneyTextView;
     private TextView anzahlTextView;
-
-
+    double karzarar[];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,15 +37,17 @@ public class Results extends AppCompatActivity {
         moneyTextView.setText(String.format("Money:"+"%.2f",money));
         percentageTextView.setText(String.valueOf("Percentage:"+percentage +"%"));
         anzahlTextView.setText(String.valueOf("Trades:"+anzahl));
-
+        karzarar = new double[anzahl];
         // Now you can perform calculations with these values
         while(i+1<=anzahl){
             placeholder  = money * (percentage/100);
             money = money + placeholder;
+            karzarar[i]=money;
             i++;
         }
 
         resultTextView.setText(String.format("Result:"+"%.2f", money));
+
 
 
 
@@ -55,5 +57,10 @@ public class Results extends AppCompatActivity {
 
 
 
+    }
+    public void hareketlerpage(View v){
+        Intent sum = new Intent(this, listtrades.class);
+        sum.putExtra("karzararArray",karzarar);
+        startActivity(sum);
     }
 }
